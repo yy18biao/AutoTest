@@ -3,6 +3,7 @@ import java.io.IOException;
 public class Run {
     public static void main(String[] args) throws IOException, InterruptedException {
         userLogin();
+        userUpdate();
     }
 
     private static void userLogin() throws IOException, InterruptedException {
@@ -25,5 +26,10 @@ public class Run {
         userReg.regFailCodeFail();
         Thread.sleep(1000);
         userReg.regSuccess();
+    }
+
+    private static void userUpdate() throws IOException, InterruptedException {
+        UserUpdate userUpdate = new UserUpdate("http://localhost:11000/");
+        userUpdate.updateUserRight();
     }
 }
